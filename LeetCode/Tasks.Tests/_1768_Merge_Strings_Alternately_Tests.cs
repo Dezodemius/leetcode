@@ -1,6 +1,8 @@
+using Tasks._1768._Merge_Strings_Alternately;
+
 namespace _1768.MergeStringsAlternately.Tests;
 
-public class Tests
+public class _1768_Merge_Strings_Alternately_Tests
 {
   [TestCase("abc", "def", "adbecf")]
   [TestCase("ab", "pqrs", "apbqrs")]

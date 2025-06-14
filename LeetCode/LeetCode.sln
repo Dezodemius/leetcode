@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1768.MergeStringsAlternately.Tests", "1768.MergeStringsAlternately.Tests\1768.MergeStringsAlternately.Tests.csproj", "{973C1106-0343-4B76-BE9C-2B10B0BADBC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Tests", "Tasks.Tests\Tasks.Tests.csproj", "{973C1106-0343-4B76-BE9C-2B10B0BADBC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1768.MergeStringsAlternately", "1768.MergeStringsAlternately\1768.MergeStringsAlternately.csproj", "{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Tasks\Tasks.csproj", "{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

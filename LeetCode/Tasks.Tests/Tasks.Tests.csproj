@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\1768.MergeStringsAlternately\1768.MergeStringsAlternately.csproj" />
+      <ProjectReference Include="..\Tasks\Tasks.csproj" />
     </ItemGroup>
 
 </Project>
