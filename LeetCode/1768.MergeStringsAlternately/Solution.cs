@@ -1,4 +1,6 @@
-﻿namespace _1768.MergeStringsAlternately;
+﻿using System.Text;
+
+namespace _1768.MergeStringsAlternately;
 
 public class Solution {
   public string MergeAlternately(string word1, string word2) {
@@ -6,22 +8,22 @@ public class Solution {
     var word2Length = word2.Length;
     var max = word1Length > word2Length ? word1Length : word2Length;
 
-    string result = string.Empty;
+    StringBuilder result =new StringBuilder();
     int i = 0;
     int j = 0;
     while (max != 0){
       if (i <= word1Length - 1) {
-        result += word1[i];
+        result.Append(word1[i]);
         i++;
       }
       if (j <= word2Length - 1) {
-        result += word2[j];
+        result.Append(word2[j]);
         j++;
       }
 
       max--;
     }
 
-    return result;
+    return result.ToString();
   }
 }
