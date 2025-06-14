@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Tasks._1071._Greatest_Common_Divisor_of_Strings;
+﻿namespace Tasks.Task1071;
 
 public class Solution {
   public string GcdOfStrings(string str1, string str2) {

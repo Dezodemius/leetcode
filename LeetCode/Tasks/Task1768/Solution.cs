@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Tasks._1768._Merge_Strings_Alternately;
+namespace Tasks.Task1768;
 
 public class Solution {
   public string MergeAlternately(string word1, string word2) {
