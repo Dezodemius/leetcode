@@ -27,4 +27,15 @@ public class Tests
 
   #endregion
 
+  #region Task1431
+
+  [TestCase(new int[] {2,3,5,1,3}, 3, new bool[] {true,true,true,false,true})]
+  [TestCase(new int[] {4,2,1,1,2}, 1, new bool[] {true,false,false,false,false})]
+  [TestCase(new int[] {12,1,12}, 10, new bool[] {true,false,true})]
+  public void Test1431(int[] candies, int extraCandies, bool[] expected)
+  {
+    Assert.That(new Task1431.Solution().KidsWithCandies(candies, extraCandies), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
