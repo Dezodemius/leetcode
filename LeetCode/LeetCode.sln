@@ -1,10 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1768.MergeStringsAlternately.Tests", "1768.MergeStringsAlternately.Tests\1768.MergeStringsAlternately.Tests.csproj", "{973C1106-0343-4B76-BE9C-2B10B0BADBC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1768.MergeStringsAlternately", "1768.MergeStringsAlternately\1768.MergeStringsAlternately.csproj", "{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{973C1106-0343-4B76-BE9C-2B10B0BADBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973C1106-0343-4B76-BE9C-2B10B0BADBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973C1106-0343-4B76-BE9C-2B10B0BADBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973C1106-0343-4B76-BE9C-2B10B0BADBC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F439905A-BB81-4D3C-93D5-69D3A4CF54BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
