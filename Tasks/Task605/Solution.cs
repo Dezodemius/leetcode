@@ -4,43 +4,31 @@ public class Solution
 {
   public bool CanPlaceFlowers(int[] flowerbed, int n)
   {
-    Dictionary<int, bool> array = new Dictionary<int, bool>(flowerbed.Length);
-    var k = flowerbed.Length;
-    int i = 1;
-    array[0] = false;
-    if (flowerbed[0] == 1)
-    {
-      k -= 2;
-      array[0] = true;
-      array[1] = true;
-      i = 2;
-    }
+    var k = 0;
 
-    for (; i < flowerbed.Length; i++)
+    for (int i = 0; i < flowerbed.Length; i++)
     {
-      array[i] = false;
       if (flowerbed[i] == 1)
       {
-        if (array.TryGetValue(i - 1, out bool result) && result == false)
+        i++;
+        continue;
+      }
+
+      if (flowerbed[i] == 0)
+      {
+        if (i == flowerbed.Length - 1 && flowerbed[i] == 0)
         {
-          k -= 2;
-          array[i] = true;
-          array[i - 1] = true;
+          k++;
+          continue;
         }
-        else
+        if (i < flowerbed.Length && flowerbed[i + 1] == 0)
         {
-          k--;
-          array[i] = true;
-        }
-        if (i != flowerbed.Length - 1)
-        {
-          k--;
-          array[i + 1] = true;
+          k++;
           i++;
         }
       }
     }
 
-    return n <= (k % 2 == 0 ? k / 2 : k / 2 + 1);
+    return n <= k;
   }
 }
