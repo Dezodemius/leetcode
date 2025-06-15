@@ -56,4 +56,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task345
+
+  [TestCase("IceCreAm", "AceCreIm")]
+  [TestCase("leetcode", "leotcede")]
+  public void Test345(string s, string expected)
+  {
+    Assert.That(new Task345.Solution().ReverseVowels(s), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
