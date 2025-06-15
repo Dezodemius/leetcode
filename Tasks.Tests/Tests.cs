@@ -32,9 +32,27 @@ public class Tests
   [TestCase(new int[] {2,3,5,1,3}, 3, new bool[] {true,true,true,false,true})]
   [TestCase(new int[] {4,2,1,1,2}, 1, new bool[] {true,false,false,false,false})]
   [TestCase(new int[] {12,1,12}, 10, new bool[] {true,false,true})]
-  public void Test1431(int[] candies, int extraCandies, bool[] expected)
+  public void Test1431(int[] flowerbed, int n, bool[] expected)
   {
-    Assert.That(new Task1431.Solution().KidsWithCandies(candies, extraCandies), Is.EqualTo(expected));
+    Assert.That(new Task1431.Solution().KidsWithCandies(flowerbed, n), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task605
+
+  [TestCase(new int[] {1,0,0,0,1}, 2, false)]
+  [TestCase(new int[] {1,0,0,0,1}, 1, true)]
+  [TestCase(new int[] {0,1,0,0,1}, 1, false)]
+  [TestCase(new int[] {0,0,1,0,1}, 1, true)]
+  [TestCase(new int[] {0,0,0,0,1}, 1, true)]
+  [TestCase(new int[] {0,0,0,0,1}, 2, true)]
+  [TestCase(new int[] {1,0,0,0,0,1}, 2, false)]
+  [TestCase(new int[] {1,0,0,0,0,0,1}, 2, true)]
+  [TestCase(new int[] {1,0,0,0,1,0,0}, 2, true)]
+  public void Test605(int[] flowerbed, int n, bool expected)
+  {
+    Assert.That(new Task605.Solution().CanPlaceFlowers(flowerbed, n), Is.EqualTo(expected));
   }
 
   #endregion
