@@ -67,4 +67,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task151
+
+  [TestCase("the sky is blue", "blue is sky the")]
+  [TestCase("  hello world  ", "world hello")]
+  [TestCase("a good   example", "example good a")]
+  public void Test151(string s, string expected)
+  {
+    Assert.That(new Task151.Solution().ReverseWords(s), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
