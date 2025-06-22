@@ -3,16 +3,19 @@
 public class Solution
 {
   public void MoveZeroes(int[] nums) {
-    for (int i = nums.Length - 1; i >= 0; i--)
+    var temp = new List<int>(nums);
+    var zeros = 0;
+    var j = 0;
+    for (int i = 0; i < temp.Count; i++)
     {
-      if (nums[i] == 0)
+      if (temp[i] == 0)
       {
-        for (int j = i; j < nums.Length - 1; j++)
-        {
-          var temp = nums[j+1];
-          nums[j+1] = nums[j];
-          nums[j] = temp;
-        }
+        nums[temp.Count - zeros - 1] = temp[i];
+        zeros++;
+      }
+      else
+      {
+        nums[i - zeros] = temp[i];
       }
     }
   }
