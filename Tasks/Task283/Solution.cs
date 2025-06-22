@@ -2,20 +2,17 @@
 
 public class Solution
 {
-  public void MoveZeroes(int[] nums) {
-    var temp = new List<int>(nums);
-    var zeros = 0;
+  public void MoveZeroes(int[] nums)
+  {
     var j = 0;
-    for (int i = 0; i < temp.Count; i++)
+    for (int i = 0; i < nums.Length; i++)
     {
-      if (temp[i] == 0)
+       if (nums[i] != 0)
       {
-        nums[temp.Count - zeros - 1] = temp[i];
-        zeros++;
-      }
-      else
-      {
-        nums[i - zeros] = temp[i];
+        var temp = nums[j];
+        nums[j] = nums[i];
+        nums[i] = temp;
+        j++;
       }
     }
   }
