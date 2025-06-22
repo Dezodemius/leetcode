@@ -105,4 +105,17 @@ public class Tests
   }
 
   #endregion
+
+  #region Task392
+
+  [TestCase("abc", "ahbgdc", true)]
+  [TestCase("axc", "ahbgdc", false)]
+  [TestCase("", "ahbgdc", true)]
+  [TestCase("b", "abc", true)]
+  public void Test392(string s, string t, bool expected)
+  {
+    Assert.That(new Task392.Solution().IsSubsequence(s, t), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
