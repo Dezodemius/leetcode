@@ -112,6 +112,7 @@ public class Tests
   [TestCase("axc", "ahbgdc", false)]
   [TestCase("", "ahbgdc", true)]
   [TestCase("b", "abc", true)]
+  [TestCase("b", "c", false)]
   public void Test392(string s, string t, bool expected)
   {
     Assert.That(new Task392.Solution().IsSubsequence(s, t), Is.EqualTo(expected));

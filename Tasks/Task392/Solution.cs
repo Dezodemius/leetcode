@@ -8,20 +8,17 @@ public class Solution
   {
     if (s.Length == 0)
       return true;
-    StringBuilder a = new StringBuilder(t);
-    int j = 0;
-    int k = 0;
+
+    var j = s.Length;
     for (int i = 0; i < t.Length; i++)
     {
-      if (t[i] != s[j])
+      if (t[i] == s[^j] && j >= 1)
       {
-        a.Remove(i - k, 1);
-        k++;
-        continue;
+        j--;
+        if (j == 0)
+          return true;
       }
-      if (j < s.Length - 1)
-        j++;
     }
-    return a.Equals(s);
+    return j == 0;
   }
 }
