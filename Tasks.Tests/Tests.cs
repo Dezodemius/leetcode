@@ -29,9 +29,9 @@ public class Tests
 
   #region Task1431
 
-  [TestCase(new int[] {2,3,5,1,3}, 3, new bool[] {true,true,true,false,true})]
-  [TestCase(new int[] {4,2,1,1,2}, 1, new bool[] {true,false,false,false,false})]
-  [TestCase(new int[] {12,1,12}, 10, new bool[] {true,false,true})]
+  [TestCase(new[] {2,3,5,1,3}, 3, new[] {true,true,true,false,true})]
+  [TestCase(new[] {4,2,1,1,2}, 1, new[] {true,false,false,false,false})]
+  [TestCase(new[] {12,1,12}, 10, new[] {true,false,true})]
   public void Test1431(int[] flowerbed, int n, bool[] expected)
   {
     Assert.That(new Task1431.Solution().KidsWithCandies(flowerbed, n), Is.EqualTo(expected));
@@ -41,15 +41,15 @@ public class Tests
 
   #region Task605
 
-  [TestCase(new int[] {1,0,0,0,1}, 2, false)]
-  [TestCase(new int[] {1,0,0,0,1}, 1, true)]
-  [TestCase(new int[] {0,1,0,0,1}, 1, false)]
-  [TestCase(new int[] {0,0,1,0,1}, 1, true)]
-  [TestCase(new int[] {0,0,0,0,1}, 1, true)]
-  [TestCase(new int[] {0,0,0,0,1}, 2, true)]
-  [TestCase(new int[] {1,0,0,0,0,1}, 2, false)]
-  [TestCase(new int[] {1,0,0,0,0,0,1}, 2, true)]
-  [TestCase(new int[] {1,0,0,0,1,0,0}, 2, true)]
+  [TestCase(new[] {1,0,0,0,1}, 2, false)]
+  [TestCase(new[] {1,0,0,0,1}, 1, true)]
+  [TestCase(new[] {0,1,0,0,1}, 1, false)]
+  [TestCase(new[] {0,0,1,0,1}, 1, true)]
+  [TestCase(new[] {0,0,0,0,1}, 1, true)]
+  [TestCase(new[] {0,0,0,0,1}, 2, true)]
+  [TestCase(new[] {1,0,0,0,0,1}, 2, false)]
+  [TestCase(new[] {1,0,0,0,0,0,1}, 2, true)]
+  [TestCase(new[] {1,0,0,0,1,0,0}, 2, true)]
   public void Test605(int[] flowerbed, int n, bool expected)
   {
     Assert.That(new Task605.Solution().CanPlaceFlowers(flowerbed, n), Is.EqualTo(expected));
@@ -76,6 +76,20 @@ public class Tests
   public void Test151(string s, string expected)
   {
     Assert.That(new Task151.Solution().ReverseWords(s), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task643
+
+  [TestCase(new[] {1,12,-5,-6,50,3}, 6, 9.16666d)]
+  [TestCase(new[] {1,12,-5,-6,50,3}, 4, 12.75000d)]
+  [TestCase(new[] {5}, 1, 5.00000d)]
+  [TestCase(new[] {0,1,1,3,3}, 4, 2.00000d)]  
+  public void Test643(int[] nums, int k, double expected)
+  {
+    var actual = new Task643.Solution().FindMaxAverage(nums, k);
+    Assert.That(actual - expected, Is.LessThanOrEqualTo(10e-5));
   }
 
   #endregion
