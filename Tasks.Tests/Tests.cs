@@ -93,4 +93,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task283
+
+  [TestCase(new int[] {0,1,0,3,12}, new int[] {1,3,12,0,0})]
+  [TestCase(new int[] {0,0,1}, new int[] {1,0,0})]
+  public void Test283(int[] nums, int[] expected)
+  {
+    new Task283.Solution().MoveZeroes(nums);
+    Assert.That(expected, Is.EqualTo(nums));
+  }
+
+  #endregion
 }
