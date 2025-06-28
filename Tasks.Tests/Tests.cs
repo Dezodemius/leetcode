@@ -119,4 +119,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1732
+
+  [TestCase(new int[] {-5,1,5,0,-7}, 1)]
+  [TestCase(new int[] {-4,-3,-2,-1,4,3,2}, 0)]
+  public void Test1732(int[] gain, int expected)
+  {
+    Assert.That(new Task1732.Solution().LargestAltitude(gain), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
