@@ -155,4 +155,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1207
+
+  [TestCase(new[] {1,2,2,1,1,3}, true)]
+  [TestCase(new[] {1,2}, false)]
+  public void Test1207(int[] nums, bool expected)
+  {
+    Assert.That(new Task1207.Solution().UniqueOccurrences(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
