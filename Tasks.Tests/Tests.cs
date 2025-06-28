@@ -130,4 +130,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task724
+
+  [TestCase(new int[] {1,7,3,6,5,6}, 3)]
+  [TestCase(new int[] {1,2,3}, -1)]
+  [TestCase(new int[] {2,1,-1}, 0)]
+  public void Test724(int[] nums, int expected)
+  {
+    Assert.That(new Task724.Solution().PivotIndex(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
