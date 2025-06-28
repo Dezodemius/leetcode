@@ -2,24 +2,19 @@
 
 public class RecentCounter
 {
-  private HashSet<int> requests;
+  private Queue<int> requests;
   public RecentCounter() {
-    this.requests =  new HashSet<int>();
+    this.requests =  new Queue<int>();
   }
 
   public int Ping(int t) {
-    this.requests.Add(t);
-    var range1 = t - 3000;
-    var range2 = t;
-    var sum = 0;
-    foreach (var request in this.requests)
+    this.requests.Enqueue(t);
+
+    while(requests.Peek() < t - 3000)
     {
-      if (request >= range1 && request <= range2)
-      {
-        sum++;
-      }
+      this.requests.Dequeue();
     }
 
-    return sum;
+    return this.requests.Count;
   }
 }
