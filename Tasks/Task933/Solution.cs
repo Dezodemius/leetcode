@@ -2,9 +2,9 @@
 
 public class RecentCounter
 {
-  private List<int> requests;
+  private HashSet<int> requests;
   public RecentCounter() {
-    this.requests =  new List<int>();
+    this.requests =  new HashSet<int>();
   }
 
   public int Ping(int t) {
@@ -12,9 +12,9 @@ public class RecentCounter
     var range1 = t - 3000;
     var range2 = t;
     var sum = 0;
-    for (int i = 0; i < this.requests.Count; i++)
+    foreach (var request in this.requests)
     {
-      if (this.requests[i] >= range1 && this.requests[i] <= range2)
+      if (request >= range1 && request <= range2)
       {
         sum++;
       }
