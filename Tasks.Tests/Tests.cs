@@ -96,8 +96,8 @@ public class Tests
 
   #region Task283
 
-  [TestCase(new int[] {0,1,0,3,12}, new int[] {1,3,12,0,0})]
-  [TestCase(new int[] {0,0,1}, new int[] {1,0,0})]
+  [TestCase(new[] {0,1,0,3,12}, new[] {1,3,12,0,0})]
+  [TestCase(new[] {0,0,1}, new[] {1,0,0})]
   public void Test283(int[] nums, int[] expected)
   {
     new Task283.Solution().MoveZeroes(nums);
@@ -122,8 +122,8 @@ public class Tests
 
   #region Task1732
 
-  [TestCase(new int[] {-5,1,5,0,-7}, 1)]
-  [TestCase(new int[] {-4,-3,-2,-1,4,3,2}, 0)]
+  [TestCase(new[] {-5,1,5,0,-7}, 1)]
+  [TestCase(new[] {-4,-3,-2,-1,4,3,2}, 0)]
   public void Test1732(int[] gain, int expected)
   {
     Assert.That(new Task1732.Solution().LargestAltitude(gain), Is.EqualTo(expected));
@@ -139,6 +139,19 @@ public class Tests
   public void Test724(int[] nums, int expected)
   {
     Assert.That(new Task724.Solution().PivotIndex(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task2215
+
+  [TestCase(new[] {1,2,3}, new[] {2,4,6}, new[] {1,3}, new[] {4,6})]
+  [TestCase(new[] {1,2,3,3}, new[] {1,1,2,2}, new[] {3}, new int[0])]
+  public void Test2215(int[] nums1, int[] nums2, int[] expected1, int[] expected2)
+  {
+    Assert.That(
+      new Task2215.Solution().FindDifference(nums1, nums2),
+      Is.EqualTo(new List<IList<int>> {expected1, expected2}));
   }
 
   #endregion
