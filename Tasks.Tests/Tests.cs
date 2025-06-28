@@ -1,3 +1,5 @@
+using Tasks.Task933;
+
 namespace Tasks;
 
 public class Tests
@@ -133,9 +135,9 @@ public class Tests
 
   #region Task724
 
-  [TestCase(new int[] {1,7,3,6,5,6}, 3)]
-  [TestCase(new int[] {1,2,3}, -1)]
-  [TestCase(new int[] {2,1,-1}, 0)]
+  [TestCase(new[] {1,7,3,6,5,6}, 3)]
+  [TestCase(new[] {1,2,3}, -1)]
+  [TestCase(new[] {2,1,-1}, 0)]
   public void Test724(int[] nums, int expected)
   {
     Assert.That(new Task724.Solution().PivotIndex(nums), Is.EqualTo(expected));
@@ -164,6 +166,22 @@ public class Tests
   {
     Assert.That(new Task1207.Solution().UniqueOccurrences(nums), Is.EqualTo(expected));
   }
+
+  #endregion
+
+  #region Task933
+
+    [TestCase(new[] { 1, 100, 3001, 3002 }, new[] { 1, 2, 3, 3 })]
+    [TestCase(new[] { 10, 3010, 6020 }, new[] { 1, 2, 2 })]
+    public void Test933(int[] pings, int[] expectedResults)
+    {
+      var recentCounter = new RecentCounter();
+      for (int i = 0; i < pings.Length; i++)
+      {
+        int result = recentCounter.Ping(pings[i]);
+        Assert.That(result, Is.EqualTo(expectedResults[i]));
+      }
+    }
 
   #endregion
 }
