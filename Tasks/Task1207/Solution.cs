@@ -6,10 +6,8 @@ public class Solution
     var a = new Dictionary<int, int>();
     for (int i = 0; i < arr.Length; i++)
     {
-      if (a.ContainsKey(arr[i]))
+      if (!a.TryAdd(arr[i], 1))
         a[arr[i]]++;
-      else
-        a[arr[i]] = 1;
     }
 
     return a.Values.Count == a.Values.Distinct().Count();
