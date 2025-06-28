@@ -4,22 +4,20 @@ public class Solution
 {
   public int PivotIndex(int[] nums)
   {
-    for (var i = 0; i < nums.Length; i++)
+    var leftsum = 0;
+    var rightsum = 0;
+
+    for (int i = 1; i < nums.Length; i++)
+      rightsum += nums[i];
+
+    if (rightsum == 0)
+      return 0;
+    for (int i = 0; i < nums.Length - 1; i++)
     {
-      var leftsum = 0;
-      var rightsum = 0;
-
-      for (var j = 0; j < i; j++)
-      {
-        leftsum += nums[j];
-      }
-      for (var j = i + 1; j < nums.Length; j++)
-      {
-        rightsum += nums[j];
-      }
-
+      leftsum += nums[i];
+      rightsum -= nums[i + 1];
       if (leftsum == rightsum)
-        return i;
+        return i + 1;
     }
 
     return -1;
