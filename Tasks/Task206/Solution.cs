@@ -16,15 +16,14 @@ public class Solution
 {
   public ListNode ReverseList(ListNode head)
   {
-    ListNode previous = null;
-    while (head != null)
-    {
-      var temp  = head.next;
-      head.next = previous;
-      previous = head;
-      head = temp;
-    }
+    if (head == null || head.next == null)
+      return head;
 
-    return previous;
+    var rest = ReverseList(head.next);
+    
+    head.next.next = head;
+    head.next = null;
+
+    return rest;
   }
 }
