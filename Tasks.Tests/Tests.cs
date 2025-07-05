@@ -1,3 +1,4 @@
+using Tasks.Task206;
 using Tasks.Task933;
 
 namespace Tasks;
@@ -171,9 +172,9 @@ public class Tests
 
   #region Task933
 
-    [TestCase(new[] { 1, 100, 3001, 3002 }, new[] { 1, 2, 3, 3 })]
-    [TestCase(new[] { 10, 3010, 6020 }, new[] { 1, 2, 2 })]
-    public void Test933(int[] pings, int[] expectedResults)
+  [TestCase(new[] { 1, 100, 3001, 3002 }, new[] { 1, 2, 3, 3 })]
+  [TestCase(new[] { 10, 3010, 6020 }, new[] { 1, 2, 2 })]
+  public void Test933(int[] pings, int[] expectedResults)
     {
       var recentCounter = new RecentCounter();
       for (int i = 0; i < pings.Length; i++)
@@ -182,6 +183,37 @@ public class Tests
         Assert.That(result, Is.EqualTo(expectedResults[i]));
       }
     }
+
+  #endregion
+
+  #region Task206
+
+  public static ListNode CreateListNode(int[] nums, int index)
+  {
+    if (!nums.Any())
+      return new ListNode();
+    if (index >= nums.Length - 1)
+      return new ListNode(nums[index]);
+
+    return new ListNode(nums[index], CreateListNode(nums, ++index));
+  }
+
+  [TestCase(new[] { 1, 2, 3, 4, 5 }, new[] { 5, 4, 3, 2, 1 })]
+  [TestCase(new[] { 1, 2}, new[] { 2, 1 })]
+  [TestCase(new int[0], new int[0])]
+  public void Test206(int[] nums, int[] expected)
+  {
+    var node = CreateListNode(nums, 0);
+    var actualNode = new Task206.Solution().ReverseList(node);
+
+    var i = 0;
+    while (actualNode.next != null)
+    {
+      Assert.That(actualNode.val, Is.EqualTo(expected[i]));
+      i++;
+      actualNode = actualNode.next;
+    }
+  }
 
   #endregion
 }
