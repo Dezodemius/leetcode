@@ -227,4 +227,24 @@ public class Tests
   }
 
   #endregion
+
+  #region Task374
+
+  [TestCase(10, 6)]
+  [TestCase(1, 1)]
+  [TestCase(2, 1)]
+  [TestCase(2126753390, 1702766719)]
+  [TestCase(2147483647, 2147483647)]
+  public void Test374(int num, int pick)
+  {
+    var guess = new Func<int, int>((n) =>
+    {
+      if (n > pick) return -1;
+      if (n < pick) return 1;
+      return 0;
+    });
+
+    Assert.That(new Task374.Solution().GuessNumber(num, guess), Is.EqualTo(pick));
+  }
+  #endregion
 }
