@@ -8,11 +8,15 @@ public class Solution
   public int[] CountBits(int n)
   {
     var ans = new int[n + 1];
+    ans[0] = 0;
 
-    for (int i = 0; i <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
-      var a = Convert.ToString(i, 2);
-      ans[i] = a.Count(j => j == '1');
+      if(i % 2 == 0){
+        ans[i] = ans[i/2];
+      } else{
+        ans[i] = ans[i/2] + 1;
+      }
     }
 
     return ans;
