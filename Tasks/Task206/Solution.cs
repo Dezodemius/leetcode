@@ -16,9 +16,6 @@ public class Solution
 {
   public ListNode ReverseList(ListNode head)
   {
-    // if (head == null)
-    //   return head;
-
     ListNode previous = null;
     while (head != null)
     {
