@@ -1,4 +1,7 @@
-﻿namespace Tasks.Task2215;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Tasks.Task2215;
 
 public class Solution
 {

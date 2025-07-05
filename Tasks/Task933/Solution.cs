@@ -1,4 +1,6 @@
-﻿namespace Tasks.Task933;
+﻿using System.Collections.Generic;
+
+namespace Tasks.Task933;
 
 public class RecentCounter
 {
