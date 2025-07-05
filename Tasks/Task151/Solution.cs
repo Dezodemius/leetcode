@@ -1,4 +1,7 @@
-﻿namespace Tasks.Task151;
+﻿using System;
+using System.Linq;
+
+namespace Tasks.Task151;
 
 public class Solution
 {

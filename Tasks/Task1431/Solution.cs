@@ -1,4 +1,6 @@
-﻿namespace Tasks.Task1431;
+﻿using System.Collections.Generic;
+
+namespace Tasks.Task1431;
 
 public class Solution {
   public IList<bool> KidsWithCandies(int[] candies, int extraCandies)
