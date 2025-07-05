@@ -216,4 +216,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task238
+
+  [TestCase(new[] { 1,2,3,4 }, new[] { 24,12,8,6 })]
+  [TestCase(new[] { -1,1,0,-3,3}, new[] { 0,0,9,0,0 })]
+  public void Test238(int[] nums, int[] expected)
+  {
+    Assert.That(new Task238.Solution().ProductExceptSelf(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
