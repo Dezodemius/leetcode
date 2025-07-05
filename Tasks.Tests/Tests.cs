@@ -246,5 +246,17 @@ public class Tests
 
     Assert.That(new Task374.Solution().GuessNumber(num, guess), Is.EqualTo(pick));
   }
+
+  #endregion
+
+  #region Task388
+
+  [TestCase(2, new int[] {0,1,1})]
+  [TestCase(5, new int[] {0,1,1,2,1,2})]
+  public void Test388(int n, int[] ans)
+  {
+    Assert.That(new Task388.Solution().CountBits(n), Is.EqualTo(ans));
+  }
+
   #endregion
 }
