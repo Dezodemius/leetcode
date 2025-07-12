@@ -4,24 +4,20 @@ public class Solution
 {
   public bool IncreasingTriplet(int[] nums)
   {
-    int i = 0;
-    int j = 1;
-    int k = 2;
+    if (nums.Length < 3)
+      return false;
 
-    for (int l = 0; l < nums.Length; l++)
+    var first = int.MaxValue;
+    var second = int.MaxValue;
+
+    foreach (var num in nums)
     {
-      bool indexes = i < j && j < k;
-      bool values = nums[i] < nums[j] && nums[j] < nums[k];
-      if (indexes && values)
-        return true;
+      if (first >= num)
+        first = num;
+      else if (second >= num)
+        second = num;
       else
-      {
-        i++;
-        j++;
-        k++;
-      }
-      if (k == nums.Length)
-        return false;
+        return true;
     }
 
     return false;

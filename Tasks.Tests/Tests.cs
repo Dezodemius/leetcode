@@ -266,6 +266,8 @@ public class Tests
   [TestCase(new int[] {5,4,3,2,1}, false)]
   [TestCase(new int[] {2,1,5,0,4,6}, true)]
   [TestCase(new int[] {20,100,10,12,5,13}, true)]
+  [TestCase(new int[] {1,2,1,3}, true)]
+  [TestCase(new int[] {1,5,0,4,1,3}, true)]
   public void Test334(int[] nums, bool expected)
   {
     Assert.That(new Task334.Solution().IncreasingTriplet(nums), Is.EqualTo(expected));
