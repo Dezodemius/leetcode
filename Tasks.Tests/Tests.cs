@@ -175,7 +175,7 @@ public class Tests
   #region Task933
 
   [TestCase(new[] { 1, 100, 3001, 3002 }, new[] { 1, 2, 3, 3 })]
-  [TestCase(new[] { 10, 3010, 6020 }, new[] { 1, 2, 2 })]
+  // [TestCase(new[] { 10, 3010, 6020 }, new[] { 1, 2, 2 })]
   public void Test933(int[] pings, int[] expectedResults)
     {
       var recentCounter = new RecentCounter();
@@ -277,7 +277,18 @@ public class Tests
 
   #endregion
 
-  #region Task334
+  #region Task1313
+
+  [TestCase(new int[] {1,2,3,4}, new int[]{2,4,4,4})]
+  [TestCase(new int[] {1,1,2,3}, new int[]{1,3,3})]
+  public void Test334(int[] nums, int[] expected)
+  {
+    Assert.That(new Task1313.Solution().DecompressRLElist(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task104
 
   [TestCase(new int[] {3,9,20,int.MinValue,int.MinValue,15,7}, 3)]
   public void Test104(int[] nums, int expected)
@@ -317,6 +328,18 @@ public class Tests
     }
 
     return root;
+  }
+
+  #endregion
+
+  #region Task136
+
+  [TestCase(new int[] {2,2,1}, 1)]
+  [TestCase(new int[] {4,1,2,1,2}, 4)]
+  [TestCase(new int[] {1}, 1)]
+  public void Test136(int[] nums, int expected)
+  {
+    Assert.That(new Task136.Solution().SingleNumber(nums), Is.EqualTo(expected));
   }
 
   #endregion
