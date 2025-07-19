@@ -293,41 +293,9 @@ public class Tests
   [TestCase(new int[] {3,9,20,int.MinValue,int.MinValue,15,7}, 3)]
   public void Test104(int[] nums, int expected)
   {
-    var node = BuildTreeFromArray(nums);
+    var node = TreeNodeBuilder.BuildTreeFromArray(nums);
 
     Assert.That(new Task104.Solution().MaxDepth(node), Is.EqualTo(expected));
-  }
-
-  public TreeNode BuildTreeFromArray(int[] arr)
-  {
-    if (arr.Length == 0)
-      return null;
-
-    TreeNode root = new TreeNode(arr[0]);
-    Queue<TreeNode> queue = new Queue<TreeNode>();
-    queue.Enqueue(root);
-
-    int i = 1;
-    while (queue.Count > 0 && i < arr.Length)
-    {
-      TreeNode current = queue.Dequeue();
-
-      if (i < arr.Length && arr[i] != null && arr[i] != int.MinValue)
-      {
-        current.left = new TreeNode(arr[i]);
-        queue.Enqueue(current.left);
-      }
-      i++;
-
-      if (i < arr.Length && arr[i] != null && arr[i] != int.MinValue)
-      {
-        current.right = new TreeNode(arr[i]);
-        queue.Enqueue(current.right);
-      }
-      i++;
-    }
-
-    return root;
   }
 
   #endregion
