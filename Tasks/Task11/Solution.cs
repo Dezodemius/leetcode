@@ -8,16 +8,18 @@ public class Solution
   {
     var maxSquare = 0;
 
-    for (int i = 0; i < height.Length; i++)
+    var i = 0;
+    var j = height.Length - 1;
+
+    while (i != j)
     {
-      for (int j = 0; j < height.Length; j++)
-      {
-        var x = Math.Abs(i - j);
-        var y = Math.Min(height[i], height[j]);
-        var s = x * y;
-        if (s > maxSquare)
-          maxSquare = s;
-      }
+      var x = Math.Abs(i - j);
+      var y = Math.Min(height[i], height[j]);
+      var s = x * y;
+      if (s > maxSquare)
+        maxSquare = s;
+      if (height[i] < height[j]) i++;
+      else j--;
     }
 
     return maxSquare;
