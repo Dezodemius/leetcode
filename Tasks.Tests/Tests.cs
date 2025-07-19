@@ -372,4 +372,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1679
+
+  [TestCase(new[] {1,2,3,4}, 5, 2)]
+  [TestCase(new[] {3,1,3,4,3}, 6, 1)]
+  public void Test1679(int[] nums, int k, int expected)
+  {
+    Assert.That(new Task1679.Solution().MaxOperations(nums, k), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
