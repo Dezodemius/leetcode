@@ -1,9 +1,7 @@
-using Tasks.Task104;
-using Tasks.Task206;
 using Tasks.Task933;
 using TaskUtils;
 
-namespace Tasks;
+namespace Tasks.Tests;
 
 public class Tests
 {
@@ -190,22 +188,12 @@ public class Tests
 
   #region Task206
 
-  public static ListNode CreateListNode(int[] nums, int index)
-  {
-    if (!nums.Any())
-      return new ListNode();
-    if (index >= nums.Length - 1)
-      return new ListNode(nums[index]);
-
-    return new ListNode(nums[index], CreateListNode(nums, ++index));
-  }
-
   [TestCase(new[] { 1, 2, 3, 4, 5 }, new[] { 5, 4, 3, 2, 1 })]
   [TestCase(new[] { 1, 2}, new[] { 2, 1 })]
   [TestCase(new int[0], new int[0])]
   public void Test206(int[] nums, int[] expected)
   {
-    var node = CreateListNode(nums, 0);
+    var node = ListNodeBuilder.BuildListNodeFromArray(nums, 0);
     var actualNode = new Task206.Solution().ReverseList(node);
 
     var i = 0;
