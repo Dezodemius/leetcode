@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Tasks.Task933;
 using TaskUtils;
 
@@ -310,6 +312,19 @@ public class Tests
   public void Test443(char[] chars, int expected)
   {
     Assert.That(new Task443.Solution().Compress(chars), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task872
+
+  [TestCase(new[] {3,5,1,6,2,9,8,int.MinValue,int.MinValue,7,4}, new[] {3,5,1,6,7,4,2,int.MinValue,int.MinValue,int.MinValue,int.MinValue,int.MinValue,int.MinValue,9,8}, true)]
+  public void Test872(int[] root1Array, int[] root2Array, bool expected)
+  {
+    var root1 = TreeNodeBuilder.BuildTreeFromArray(root1Array);
+    var root2 = TreeNodeBuilder.BuildTreeFromArray(root1Array);
+
+    Assert.That(new Task872.Solution().LeafSimilar(root1, root2), Is.EqualTo(expected));
   }
 
   #endregion
