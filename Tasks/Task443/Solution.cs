@@ -6,50 +6,35 @@ public class Solution
 {
   public int Compress(char[] chars)
   {
-    char prev = chars[0];
-    int num = 1;
-    var str = new StringBuilder();
-    str.Append(chars[0]);
-
+    var res = new StringBuilder();
+    var groupStartSymbol = chars[0];
+    var count = 1;
     for (int i = 1; i < chars.Length; i++)
     {
-      if (chars[i] == prev)
+      if (groupStartSymbol == chars[i])
       {
-        num++;
+        count++;
       }
-      if (chars[i] != prev || i == chars.Length - 1)
-      {
-        prev = chars[i];
-        if (num > 1)
-        {
-          var nums_s = num.ToString();
-          foreach (var t in nums_s)
-          {
-            str.Append(t);
-          }
-        }
-
-        if (i == chars.Length - 1)
-        {
-          if (num == 1)
-            str.Append(chars[i]);
-          break;
-        }
-
-        num = 1;
-      }
-    }
-
-    var k = 0;
-    for (int i = 0; i < chars.Length; i++)
-    {
-      if (k < str.Length)
-        chars[i] = str[k];
       else
-        chars[i] = '\0';
-      k++;
+      {
+        res.Append(groupStartSymbol.ToString());
+        groupStartSymbol = chars[i];
+        if (count == 1)
+          continue;
+        res.Append(count.ToString());
+        count = 1;
+      }
     }
 
-    return str.Length;
+    if (count != 1)
+      res.Append(groupStartSymbol.ToString() + count);
+    else
+      res.Append(groupStartSymbol.ToString());
+    for (int i = 1; i < res.Length; i++)
+    {
+      chars[i] = res[i];
+    }
+
+    return res.Length;
   }
 }
