@@ -33,4 +33,52 @@ public static class TreeNodeBuilder
 
     return root;
   }
+
+  public static int[] BuildArrayFromTreeNode(TreeNode root)
+  {
+    if (root == null)
+      return [];
+
+    var result = new List<int>();
+    var queue = new Queue<TreeNode>();
+    queue.Enqueue(root);
+
+    while (queue.Count > 0)
+    {
+      int levelSize = queue.Count;
+      bool levelHasValues = false;
+      var levelNodes = new List<int>();
+
+      for (int i = 0; i < levelSize; i++)
+      {
+        var node = queue.Dequeue();
+
+        if (node != null)
+        {
+          levelNodes.Add(node.val);
+          queue.Enqueue(node.left ?? null);
+          queue.Enqueue(node.right ?? null);
+          if (node.left != null || node.right != null)
+            levelHasValues = true;
+        }
+        else
+        {
+          levelNodes.Add(int.MinValue);
+          queue.Enqueue(null);
+          queue.Enqueue(null);
+        }
+      }
+
+      if (!levelHasValues && levelNodes.All(x => x == int.MinValue))
+        break;
+
+      result.AddRange(levelNodes);
+    }
+
+    int lastNonNullIndex = result.FindLastIndex(x => x != int.MinValue);
+    if (lastNonNullIndex >= 0)
+      return result.GetRange(0, lastNonNullIndex + 1).ToArray();
+
+    return [];
+  }
 }

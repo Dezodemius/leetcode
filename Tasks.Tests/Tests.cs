@@ -328,4 +328,21 @@ public class Tests
   }
 
   #endregion
+
+  #region Task700
+
+  [TestCase(new[] {4,2,7,1,3}, 2,new[] {2,1,3})]
+  [TestCase(new[] {4,2,7,1,3}, 5,new int[0])]
+  [TestCase(new[] {4}, 4,new[]{4})]
+  [TestCase(new[] {4}, 5,new int[0])]
+  public void Test700(int[] rootArray, int val, int[] expected)
+  {
+    var root = TreeNodeBuilder.BuildTreeFromArray(rootArray);
+
+    Assert.That(
+      TreeNodeBuilder.BuildArrayFromTreeNode(new Task700.Solution().SearchBST(root, val)),
+      Is.EqualTo(expected));
+  }
+
+  #endregion
 }
