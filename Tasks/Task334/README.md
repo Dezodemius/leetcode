@@ -48,14 +48,3 @@ The triplet `(3, 4, 5)` is valid because:
 **Could you implement a solution that runs in:**
 - **O(n)** time complexity
 - **O(1)** space complexity?
-
----
-
-## Approach
-The problem can be efficiently solved by tracking the smallest and second smallest elements while iterating through the array:
-1. Initialize two variables, `first` and `second`, to store the smallest and second smallest elements found so far.
-2. Iterate through each number in the array:
-    - If a number is found that is **greater than both `first` and `second`**, return `true`.
-    - Otherwise, update `first` or `second` accordingly.
-
-This approach ensures **O(n)** time and **O(1)** space complexity.

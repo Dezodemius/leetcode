@@ -342,4 +342,18 @@ public class Tests
   }
 
   #endregion
+
+  #region Task443
+
+  [TestCase(new Char[] {'a','a','b','b','c','c','c'}, 6)]
+  [TestCase(new Char[] {'a','b','c',}, 3)]
+  [TestCase(new Char[] {'a'}, 1)]
+  [TestCase(new Char[] {'a','a','a','a','a','b'}, 3)]
+  [TestCase(new Char[] {'a','b','b','b','b','b','b','b','b','b','b','b','b'}, 4)]
+  public void Test443(char[] chars, int expected)
+  {
+    Assert.That(new Task443.Solution().Compress(chars), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
