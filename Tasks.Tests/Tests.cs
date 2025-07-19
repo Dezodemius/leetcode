@@ -330,4 +330,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task136
+
+  [TestCase(new int[] {2,2,1}, 1)]
+  [TestCase(new int[] {4,1,2,1,2}, 4)]
+  [TestCase(new int[] {1}, 1)]
+  public void Test136(int[] nums, int expected)
+  {
+    Assert.That(new Task136.Solution().SingleNumber(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
