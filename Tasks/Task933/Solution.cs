@@ -2,8 +2,7 @@
 
 namespace Tasks.Task933;
 
-public class RecentCounter
-{
+public class RecentCounter {
   private Queue<int> requests;
   public RecentCounter() {
     this.requests =  new Queue<int>();
@@ -19,4 +18,5 @@ public class RecentCounter
 
     return this.requests.Count;
   }
+
 }
