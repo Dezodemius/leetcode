@@ -241,8 +241,8 @@ public class Tests
 
   #region Task388
 
-  [TestCase(2, new int[] {0,1,1})]
-  [TestCase(5, new int[] {0,1,1,2,1,2})]
+  [TestCase(2, new[] {0,1,1})]
+  [TestCase(5, new[] {0,1,1,2,1,2})]
   public void Test388(int n, int[] ans)
   {
     Assert.That(new Task388.Solution().CountBits(n), Is.EqualTo(ans));
@@ -252,12 +252,12 @@ public class Tests
 
   #region Task334
 
-  [TestCase(new int[] {1,2,3,4,5}, true)]
-  [TestCase(new int[] {5,4,3,2,1}, false)]
-  [TestCase(new int[] {2,1,5,0,4,6}, true)]
-  [TestCase(new int[] {20,100,10,12,5,13}, true)]
-  [TestCase(new int[] {1,2,1,3}, true)]
-  [TestCase(new int[] {1,5,0,4,1,3}, true)]
+  [TestCase(new[] {1,2,3,4,5}, true)]
+  [TestCase(new[] {5,4,3,2,1}, false)]
+  [TestCase(new[] {2,1,5,0,4,6}, true)]
+  [TestCase(new[] {20,100,10,12,5,13}, true)]
+  [TestCase(new[] {1,2,1,3}, true)]
+  [TestCase(new[] {1,5,0,4,1,3}, true)]
   public void Test334(int[] nums, bool expected)
   {
     Assert.That(new Task334.Solution().IncreasingTriplet(nums), Is.EqualTo(expected));
@@ -267,8 +267,8 @@ public class Tests
 
   #region Task1313
 
-  [TestCase(new int[] {1,2,3,4}, new int[]{2,4,4,4})]
-  [TestCase(new int[] {1,1,2,3}, new int[]{1,3,3})]
+  [TestCase(new[] {1,2,3,4}, new[]{2,4,4,4})]
+  [TestCase(new[] {1,1,2,3}, new[]{1,3,3})]
   public void Test334(int[] nums, int[] expected)
   {
     Assert.That(new Task1313.Solution().DecompressRLElist(nums), Is.EqualTo(expected));
@@ -278,7 +278,7 @@ public class Tests
 
   #region Task104
 
-  [TestCase(new int[] {3,9,20,int.MinValue,int.MinValue,15,7}, 3)]
+  [TestCase(new[] {3,9,20,int.MinValue,int.MinValue,15,7}, 3)]
   public void Test104(int[] nums, int expected)
   {
     var node = TreeNodeBuilder.BuildTreeFromArray(nums);
@@ -290,9 +290,9 @@ public class Tests
 
   #region Task136
 
-  [TestCase(new int[] {2,2,1}, 1)]
-  [TestCase(new int[] {4,1,2,1,2}, 4)]
-  [TestCase(new int[] {1}, 1)]
+  [TestCase(new[] {2,2,1}, 1)]
+  [TestCase(new[] {4,1,2,1,2}, 4)]
+  [TestCase(new[] {1}, 1)]
   public void Test136(int[] nums, int expected)
   {
     Assert.That(new Task136.Solution().SingleNumber(nums), Is.EqualTo(expected));
@@ -302,11 +302,11 @@ public class Tests
 
   #region Task443
 
-  [TestCase(new Char[] {'a','a','b','b','c','c','c'}, 6)]
-  [TestCase(new Char[] {'a','b','c',}, 3)]
-  [TestCase(new Char[] {'a'}, 1)]
-  [TestCase(new Char[] {'a','a','a','a','a','b'}, 3)]
-  [TestCase(new Char[] {'a','b','b','b','b','b','b','b','b','b','b','b','b'}, 4)]
+  [TestCase(new[] {'a','a','b','b','c','c','c'}, 6)]
+  [TestCase(new[] {'a','b','c',}, 3)]
+  [TestCase(new[] {'a'}, 1)]
+  [TestCase(new[] {'a','a','a','a','a','b'}, 3)]
+  [TestCase(new[] {'a','b','b','b','b','b','b','b','b','b','b','b','b'}, 4)]
   public void Test443(char[] chars, int expected)
   {
     Assert.That(new Task443.Solution().Compress(chars), Is.EqualTo(expected));
