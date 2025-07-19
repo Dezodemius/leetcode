@@ -361,4 +361,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task11
+
+  [TestCase(new[] {1,8,6,2,5,4,8,3,7}, 49)]
+  [TestCase(new[] {1,1}, 1)]
+  public void Test11(int[] height, int expected)
+  {
+    Assert.That(new Task11.Solution().MaxArea(height), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
