@@ -383,4 +383,23 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1456
+
+  [TestCase("abciiidef", 3, 3)]
+  [TestCase("aeiou", 2, 2)]
+  [TestCase("leetcode", 3, 2)]
+  [TestCase("leet", 3, 2)]
+  [TestCase("eeet", 3, 3)]
+  [TestCase("eee", 3, 3)]
+  [TestCase("eek", 3, 2)]
+  [TestCase("", 3, 0)]
+  [TestCase("avcdce", 1, 1)]
+  [TestCase("weallloveyou", 7, 4)]
+  public void Test1456(string s, int k, int expected)
+  {
+    Assert.That(new Task1456.Solution().MaxVowels(s, k), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
