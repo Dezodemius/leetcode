@@ -448,4 +448,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task929
+
+  [TestCase(new [] {"test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"}, 2)]
+  [TestCase(new [] {"a@leetcode.com","b@leetcode.com","c@leetcode.com"}, 3)]
+  public void Test929(string[] emails, int expected)
+  {
+    Assert.That(new Task929.Solution().NumUniqueEmails(emails), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
