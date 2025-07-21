@@ -402,4 +402,17 @@ public class Tests
   }
 
   #endregion
+
+
+
+  #region Task704
+
+  [TestCase(new[] {-1,0,3,5,9,12}, 9, 4)]
+  [TestCase(new[] {-1,0,3,5,9,12}, 2, -1)]
+  public void Test704(int[] nums, int target, int expected)
+  {
+    Assert.That(new Task704.Solution().Search(nums, target), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
