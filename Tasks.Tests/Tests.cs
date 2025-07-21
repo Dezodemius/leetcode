@@ -425,4 +425,27 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1523
+
+  [TestCase(3, 7, 3)]
+  [TestCase(8, 10, 1)]
+  public void Test1523(int l, int h, int expected)
+  {
+    Assert.That(new Task1523.Solution().CountOdds(l, h), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task1491
+
+  [TestCase(new [] {4000,3000,1000,2000}, 2500.0)]
+  [TestCase(new [] {1000,2000,3000}, 2000.0)]
+  public void Test1491(int[] salary, double expected)
+  {
+    var actual = new Task1491.Solution().Average(salary);
+    Assert.That(actual - expected, Is.LessThanOrEqualTo(10e-5));
+  }
+
+  #endregion
 }
