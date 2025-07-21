@@ -403,8 +403,6 @@ public class Tests
 
   #endregion
 
-
-
   #region Task704
 
   [TestCase(new[] {-1,0,3,5,9,12}, 9, 4)]
@@ -412,6 +410,18 @@ public class Tests
   public void Test704(int[] nums, int target, int expected)
   {
     Assert.That(new Task704.Solution().Search(nums, target), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task13
+
+  [TestCase("III", 3)]
+  [TestCase("LVIII", 58)]
+  [TestCase("MCMXCIV", 1994)]
+  public void Test13(string s, int expected)
+  {
+    Assert.That(new Task13.Solution().RomanToInt(s), Is.EqualTo(expected));
   }
 
   #endregion
