@@ -1,4 +1,6 @@
-﻿namespace Tasks.Task485;
+﻿using System;
+
+namespace Tasks.Task485;
 
 public class Solution
 {
@@ -19,7 +21,7 @@ public class Solution
     }
     if (count > res)
       res = count;
-
+    GC.Collect();
     return res;
   }
 }
