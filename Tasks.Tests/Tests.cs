@@ -484,4 +484,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task17
+
+  [TestCase("23", new [] {"ad","ae","af","bd","be","bf","cd","ce","cf"})]
+  [TestCase("", new string[0])]
+  [TestCase("2", new []{"a","b","c"})]
+  public void Test17(string digits, string[] expected)
+  {
+    Assert.That(new Task17.Solution().LetterCombinations(digits), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
