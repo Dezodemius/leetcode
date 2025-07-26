@@ -543,4 +543,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task9
+
+  [TestCase(121, true)]
+  [TestCase(-121, false)]
+  [TestCase(10, false)]
+  public void Test9(int x, bool expected)
+  {
+    Assert.That(new Task9.Solution().IsPalindrome(x), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
