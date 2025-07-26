@@ -470,4 +470,18 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1137
+
+  [TestCase(4, 4)]
+  [TestCase(25, 1389537)]
+  [TestCase(1, 1)]
+  [TestCase(0, 0)]
+  [TestCase(2, 1)]
+  public void Test1137(int n, int expected)
+  {
+    Assert.That(new Task1137.Solution().Tribonacci(n), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
