@@ -460,6 +460,17 @@ public class Tests
 
   #endregion
 
+  #region Task485
+
+  [TestCase(new [] {1,1,0,1,1,1}, 3)]
+  [TestCase(new [] {1,0,1,1,0,1}, 2)]
+  public void Test485(int[] nums, int expected)
+  {
+    Assert.That(new Task485.Solution().FindMaxConsecutiveOnes(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
+
   #region Task1004
 
   [TestCase(new [] {1,1,1,0,0,0,1,1,1,1,0}, 2, 6)]
