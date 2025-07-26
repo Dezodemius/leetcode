@@ -496,4 +496,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task2390
+
+  [TestCase("leet**cod*e", "lecoe")]
+  [TestCase("erase*****", "")]
+  public void Test2390(string s, string expected)
+  {
+    Assert.That(new Task2390.Solution().RemoveStars(s), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
