@@ -507,4 +507,40 @@ public class Tests
   }
 
   #endregion
+
+  #region Task2352
+
+  [Test]
+  public void Test2352_1()
+  {
+    int[][] grid = [[3,2,1],[1,7,6],[2,7,7]];
+    var expected = 1;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  [Test]
+  public void Test2352_2()
+  {
+    int[][] grid = [[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]];
+    var expected = 3;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  [Test]
+  public void Test2352_3()
+  {
+    int[][] grid = [[11,1],[1,11]];
+    var expected = 2;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  [Test]
+  public void Test2352_4()
+  {
+    int[][] grid = [[13,13],[13,13]];
+    var expected = 4;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
