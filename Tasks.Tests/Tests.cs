@@ -560,6 +560,9 @@ public class Tests
 
   [TestCase("3[a]2[bc]", "aaabcbc")]
   [TestCase("3[a]", "aaa")]
+  [TestCase("10[a]", "aaaaaaaaaa")]
+  [TestCase("3[a]b", "aaab")]
+  [TestCase("3[a]bc", "aaabc")]
   [TestCase("3[ab]", "ababab")]
   [TestCase("3[a]10[bc]", "aaabcbcbcbcbcbcbcbcbcbc")]
   [TestCase("3[a2[c]]", "accaccacc")]
