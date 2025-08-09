@@ -555,4 +555,17 @@ public class Tests
   }
 
   #endregion
+
+  #region Task394
+
+  [TestCase("3[a]2[bc]", "aaabcbc")]
+  [TestCase("3[a]10[bc]", "aaabcbcbcbcbcbcbcbcbcbc")]
+  [TestCase("3[a2[c]]", "accaccacc")]
+  [TestCase("2[abc]3[cd]ef", "abcabccdcdcdef")]
+  public void Test394(string s, string expected)
+  {
+    Assert.That(new Task394.Solution().DecodeString(s), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
