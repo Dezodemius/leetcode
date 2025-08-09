@@ -7,9 +7,10 @@ public class Solution
 {
   public string DecodeString(string s)
   {
-    var res = string.Empty;
     var currentString = string.Empty;
     var currentNumber = string.Empty;
+    var strings = new Stack<string>();
+    var counts = new Stack<int>();
 
     foreach (var c in s)
     {
@@ -21,20 +22,23 @@ public class Solution
       {
         currentString += c.ToString();
       }
-      // else if (c == '[')
-      // {
-      //   
-      // }
+      else if (c == '[')
+      {
+        counts.Push(int.Parse(currentNumber));
+        strings.Push(currentString);
+        currentNumber = string.Empty;
+        currentString = string.Empty;
+      }
       else if (c == ']')
       {
-        var count = int.Parse(currentNumber);
+        var count = counts.Pop();
+        var temp = string.Empty;
         for (var i = 0; i < count; i++)
-          res += currentString;
-        currentString = string.Empty;
-        currentNumber = string.Empty;
+          temp += currentString;
+        currentString = strings.Pop() + temp;
       }
     }
     
-    return res + currentString;
+    return currentString;
   }
 }
