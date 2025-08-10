@@ -9,28 +9,34 @@ public class Solution
     public int[] AsteroidCollision(int[] asteroids)
     {
         var stack = new Stack<int>();
+        var queue = new Queue<int>(asteroids.Length - 1);
+        for (int i = 1; i < asteroids.Length; i++)
+            queue.Enqueue(asteroids[i]);
+    
         stack.Push(asteroids[0]);
 
-        for (var i = 1; i < asteroids.Length; i++)
+        while (queue.TryDequeue(out var asteroid))
         {
-            var current = asteroids[i];
             if (stack.Count == 0)
-                stack.Push(current);
+            {
+                stack.Push(asteroid);
+                continue;
+            }
             while (stack.Count != 0)
             {
                 var previous = stack.Peek();
-                if (Math.Sign(current) != Math.Sign(previous))
+                if (Math.Sign(asteroid) != Math.Sign(previous))
                 {
                     if (Math.Sign(previous) < 0)
                     {
-                        stack.Push(current);
+                        stack.Push(asteroid);
                         break;
                     }
-                    if (Math.Abs(current) > Math.Abs(previous))
+                    if (Math.Abs(asteroid) > Math.Abs(previous))
                     {
                         stack.Pop();
                     }
-                    else if (Math.Abs(current) == Math.Abs(previous))
+                    else if (Math.Abs(asteroid) == Math.Abs(previous))
                     {
                         stack.Pop();
                         break;
@@ -42,13 +48,14 @@ public class Solution
                 }
                 else
                 {
-                    stack.Push(current);
+                    stack.Push(asteroid);
                     break;
                 }
 
-                if (stack.Count == 0 && i == asteroids.Length - 1)
+                if (stack.Count == 0)
                 {
-                    stack.Push(current);
+                    stack.Push(asteroid);
+                    break;
                 }
             }
         }

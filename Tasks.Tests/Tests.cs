@@ -622,6 +622,7 @@ public class Tests
   [TestCase(new [] {2,1,-1,-2},  new int[0])]
   [TestCase(new [] {1,-2,-2,-2},  new [] {-2,-2,-2})]
   [TestCase(new [] {1,-2,-1,-2},  new [] {-2,-1,-2})]
+  [TestCase(new [] {1,-1,-2,-2},  new [] {-2,-2})]
   public void Test735(int[] asteroids, int[] expected)
   {
     Assert.That(new Task735.Solution().AsteroidCollision(asteroids), Is.EqualTo(expected));
