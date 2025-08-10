@@ -585,7 +585,7 @@ public class Tests
 
   #endregion
 
-  #region Task1004
+  #region Task1493
 
   [TestCase(new [] {1,1,0,1},  3)]
   [TestCase(new [] {0,1,1,1,0,1,1,0,1}, 5)]
@@ -593,6 +593,20 @@ public class Tests
   public void Test1493(int[] nums, int expected)
   {
     Assert.That(new Task1493.Solution().LongestSubarray(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task1657
+
+  [TestCase("abc",  "bca", true)]
+  [TestCase("abc",  "def", false)]
+  [TestCase("a",  "aa", false)]
+  [TestCase("cabbba",  "abbccc", true)]
+  [TestCase("abbzccca",  "babzzczc", true)]
+  public void Test1657(string word1, string word2, bool expected)
+  {
+    Assert.That(new Task1657.Solution().CloseStrings(word1, word2), Is.EqualTo(expected));
   }
 
   #endregion
