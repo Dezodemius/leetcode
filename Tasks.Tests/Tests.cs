@@ -610,4 +610,22 @@ public class Tests
   }
 
   #endregion
+
+  #region Task735
+
+  [TestCase(new [] {5,10,-5},  new [] {5,10})]
+  [TestCase(new [] {8,-8},  new int[0])]
+  [TestCase(new [] {10,2,-5},  new [] {10})]
+  [TestCase(new [] {5,2,-10},  new [] {-10})]
+  [TestCase(new [] {5,2,-10,-10},  new [] {-10, -10})]
+  [TestCase(new [] {-2,-1,1,2},  new [] {-2,-1,1,2})]
+  [TestCase(new [] {2,1,-1,-2},  new int[0])]
+  [TestCase(new [] {1,-2,-2,-2},  new [] {-2,-2,-2})]
+  [TestCase(new [] {1,-2,-1,-2},  new [] {-2,-1,-2})]
+  public void Test735(int[] asteroids, int[] expected)
+  {
+    Assert.That(new Task735.Solution().AsteroidCollision(asteroids), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
