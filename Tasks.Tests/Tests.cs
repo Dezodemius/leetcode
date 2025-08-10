@@ -573,4 +573,15 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1004
+
+  [TestCase(new [] {1,1,1,0,0,0,1,1,1,1,0}, 2, 6)]
+  [TestCase(new [] {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1}, 3, 10)]
+  public void Test1004(int[] nums, int k, int expected)
+  {
+    Assert.That(new Task1004.Solution().LongestOnes(nums, k), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
