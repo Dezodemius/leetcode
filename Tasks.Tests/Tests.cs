@@ -634,7 +634,7 @@ public class Tests
 
   [TestCase("RD",  "Radiant")]
   [TestCase("RDD",  "Dire")]
-  [TestCase("DDRRR",  "Radiant")]
+  [TestCase("DDRRR",  "Dire")]
   public void Test649(string senate, string expected)
   {
     Assert.That(new Task649.Solution().PredictPartyVictory(senate), Is.EqualTo(expected));

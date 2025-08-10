@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Tasks.Task649;
 
@@ -13,26 +14,34 @@ public class Solution
         const char D = 'D';
 
         var queue = new Queue<char>(senate);
-        while (queue.TryDequeue(out char senator))
+        
+        var countR = senate.Count(x => x == R);
+        var countD = senate.Length - countR;
+        var direction = 0;
+
+        while (countD > 0 && countR > 0)
         {
-            if (queue.TryPeek(out var nextSenator))
+            char senator = queue.Dequeue();
+            if (senator == R)
             {
-                if (nextSenator != senator)
+                if (direction >= 0)
                 {
-                    queue.Dequeue();
-                    res = senator;
+                    countD--;
+                    queue.Enqueue(senator);
                 }
-                else
-                {
-                    res = senator;
-                }
+                direction++;
             }
-            else
+            if (senator == D)
             {
-                res = senator;
+                if (direction <= 0)
+                {
+                    countR--;
+                    queue.Enqueue(senator);
+                }
+                direction--;
             }
         }
-
-        return res == R ? Radiant : Dire;
+        
+        return countR != 0 ? Radiant : Dire;
     }
 }
