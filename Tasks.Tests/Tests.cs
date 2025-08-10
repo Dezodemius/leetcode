@@ -629,4 +629,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task649
+
+  [TestCase("RD",  "Radiant")]
+  [TestCase("RDD",  "Dire")]
+  [TestCase("DDRRR",  "Radiant")]
+  public void Test649(string senate, string expected)
+  {
+    Assert.That(new Task649.Solution().PredictPartyVictory(senate), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
