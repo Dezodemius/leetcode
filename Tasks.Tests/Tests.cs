@@ -584,4 +584,16 @@ public class Tests
   }
 
   #endregion
+
+  #region Task1004
+
+  [TestCase(new [] {1,1,0,1},  3)]
+  [TestCase(new [] {0,1,1,1,0,1,1,0,1}, 5)]
+  [TestCase(new [] {1,1,1}, 2)]
+  public void Test1493(int[] nums, int expected)
+  {
+    Assert.That(new Task1493.Solution().LongestSubarray(nums), Is.EqualTo(expected));
+  }
+
+  #endregion
 }
