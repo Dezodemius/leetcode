@@ -195,7 +195,7 @@ public class Tests
   [TestCase(new int[0], new int[0])]
   public void Test206(int[] nums, int[] expected)
   {
-    var node = ListNodeBuilder.BuildListNodeFromArray(nums, 0);
+    var node = ListNodeUtils.BuildListNodeFromArray(nums, 0);
     var actualNode = new Task206.Solution().ReverseList(node);
 
     var i = 0;
@@ -283,7 +283,7 @@ public class Tests
   [TestCase(new[] {3,9,20,int.MinValue,int.MinValue,15,7}, 3)]
   public void Test104(int[] nums, int expected)
   {
-    var node = TreeNodeBuilder.BuildTreeFromArray(nums);
+    var node = TreeNodeUtils.BuildTreeFromArray(nums);
 
     Assert.That(new Task104.Solution().MaxDepth(node), Is.EqualTo(expected));
   }
@@ -321,8 +321,8 @@ public class Tests
   [TestCase(new[] {3,5,1,6,2,9,8,int.MinValue,int.MinValue,7,4}, new[] {3,5,1,6,7,4,2,int.MinValue,int.MinValue,int.MinValue,int.MinValue,int.MinValue,int.MinValue,9,8}, true)]
   public void Test872(int[] root1Array, int[] root2Array, bool expected)
   {
-    var root1 = TreeNodeBuilder.BuildTreeFromArray(root1Array);
-    var root2 = TreeNodeBuilder.BuildTreeFromArray(root1Array);
+    var root1 = TreeNodeUtils.BuildTreeFromArray(root1Array);
+    var root2 = TreeNodeUtils.BuildTreeFromArray(root1Array);
 
     Assert.That(new Task872.Solution().LeafSimilar(root1, root2), Is.EqualTo(expected));
   }
@@ -337,10 +337,10 @@ public class Tests
   [TestCase(new[] {4}, 5,new int[0])]
   public void Test700(int[] rootArray, int val, int[] expected)
   {
-    var root = TreeNodeBuilder.BuildTreeFromArray(rootArray);
+    var root = TreeNodeUtils.BuildTreeFromArray(rootArray);
 
     Assert.That(
-      TreeNodeBuilder.BuildArrayFromTreeNode(new Task700.Solution().SearchBST(root, val)),
+      TreeNodeUtils.BuildArrayFromTreeNode(new Task700.Solution().SearchBST(root, val)),
       Is.EqualTo(expected));
   }
 
@@ -638,6 +638,21 @@ public class Tests
   public void Test649(string senate, string expected)
   {
     Assert.That(new Task649.Solution().PredictPartyVictory(senate), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task649
+
+  [TestCase(new[] { 1,3,4,7,1,2,6 }, new[] {1,3,4,1,2,6 })]
+  [TestCase(new[] { 1,2,3,4 }, new[] {1,2,4 })]
+  [TestCase(new[] { 2,1 }, new[] {2 })]
+  public void Test2095(int[] nums, int[] expected)
+  {
+    var node = ListNodeUtils.BuildListNodeFromArray(nums, 0);
+    var actualNode = new Task2095.Solution().DeleteMiddle(node);
+    var actual = ListNodeUtils.BuildArrayFromListNode(actualNode);
+    Assert.That(actual, Is.EqualTo(expected));
   }
 
   #endregion

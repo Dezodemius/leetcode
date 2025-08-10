@@ -1,6 +1,6 @@
 ﻿namespace TaskUtils;
 
-public static class TreeNodeBuilder
+public static class TreeNodeUtils
 {
   public static TreeNode BuildTreeFromArray(int[] arr)
   {
