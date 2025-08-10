@@ -471,6 +471,109 @@ public class Tests
 
   #endregion
 
+  #region Task1137
+
+  [TestCase(4, 4)]
+  [TestCase(25, 1389537)]
+  [TestCase(1, 1)]
+  [TestCase(0, 0)]
+  [TestCase(2, 1)]
+  public void Test1137(int n, int expected)
+  {
+    Assert.That(new Task1137.Solution().Tribonacci(n), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task17
+
+  [TestCase("23", new [] {"ad","ae","af","bd","be","bf","cd","ce","cf"})]
+  [TestCase("", new string[0])]
+  [TestCase("2", new []{"a","b","c"})]
+  public void Test17(string digits, string[] expected)
+  {
+    Assert.That(new Task17.Solution().LetterCombinations(digits), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task2390
+
+  [TestCase("leet**cod*e", "lecoe")]
+  [TestCase("erase*****", "")]
+  public void Test2390(string s, string expected)
+  {
+    Assert.That(new Task2390.Solution().RemoveStars(s), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task2352
+
+  [Test]
+  public void Test2352_1()
+  {
+    int[][] grid = [[3,2,1],[1,7,6],[2,7,7]];
+    var expected = 1;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  [Test]
+  public void Test2352_2()
+  {
+    int[][] grid = [[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]];
+    var expected = 3;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  [Test]
+  public void Test2352_3()
+  {
+    int[][] grid = [[11,1],[1,11]];
+    var expected = 2;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  [Test]
+  public void Test2352_4()
+  {
+    int[][] grid = [[13,13],[13,13]];
+    var expected = 4;
+    Assert.That(new Task2352.Solution().EqualPairs(grid), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task9
+
+  [TestCase(121, true)]
+  [TestCase(-121, false)]
+  [TestCase(10, false)]
+  public void Test9(int x, bool expected)
+  {
+    Assert.That(new Task9.Solution().IsPalindrome(x), Is.EqualTo(expected));
+  }
+
+  #endregion
+
+  #region Task394
+
+  [TestCase("3[a]2[bc]", "aaabcbc")]
+  [TestCase("3[a]", "aaa")]
+  [TestCase("10[a]", "aaaaaaaaaa")]
+  [TestCase("3[a]b", "aaab")]
+  [TestCase("3[a]bc", "aaabc")]
+  [TestCase("3[ab]", "ababab")]
+  [TestCase("3[a]10[bc]", "aaabcbcbcbcbcbcbcbcbcbc")]
+  [TestCase("3[a2[c]]", "accaccacc")]
+  [TestCase("2[abc]3[cd]ef", "abcabccdcdcdef")]
+  public void Test394(string s, string expected)
+  {
+    Assert.That(new Task394.Solution().DecodeString(s), Is.EqualTo(expected));
+  }
+
+  #endregion
+
   #region Task1004
 
   [TestCase(new [] {1,1,1,0,0,0,1,1,1,1,0}, 2, 6)]
